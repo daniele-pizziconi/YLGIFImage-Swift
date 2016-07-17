@@ -10,7 +10,7 @@ import UIKit
 import ImageIO
 import MobileCoreServices
 
-class YLGIFImage : UIImage {
+public class YLGIFImage : UIImage {
     
     private class func isCGImageSourceContainAnimatedGIF(_ cgImageSource: CGImageSource!) -> Bool {
         let isGIF = UTTypeConformsTo(CGImageSourceGetType(cgImageSource)!, kUTTypeGIF)
@@ -108,11 +108,11 @@ class YLGIFImage : UIImage {
         }
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    required init(imageLiteralResourceName name: String) {
+    required public init(imageLiteralResourceName name: String) {
         fatalError("init(imageLiteral name:) has not been implemented")
     }
 

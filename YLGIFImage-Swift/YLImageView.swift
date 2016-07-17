@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class YLImageView : UIImageView {
+public class YLImageView : UIImageView {
     
     private lazy var displayLink:CADisplayLink = CADisplayLink(target: self, selector: #selector(self.changeKeyFrame(_:)))
     private var accumulator: TimeInterval = 0.0
@@ -18,7 +18,7 @@ class YLImageView : UIImageView {
     private var loopCountdown: Int = Int.max
     private var animatedImage: YLGIFImage? = nil
   
-    required init?(coder aDecoder: NSCoder)  {
+    required public init?(coder aDecoder: NSCoder)  {
         super.init(coder: aDecoder)
         self.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
         self.displayLink.isPaused = true
@@ -42,7 +42,7 @@ class YLImageView : UIImageView {
         self.displayLink.isPaused = true
     }
     
-    override var image: UIImage! {
+    override public var image: UIImage! {
         get {
             if (self.animatedImage != nil) {
                 return self.animatedImage
@@ -73,7 +73,7 @@ class YLImageView : UIImageView {
         }
     }
     
-    override var isHighlighted: Bool {
+    override public var isHighlighted: Bool {
     get{
         return super.isHighlighted
     }
@@ -86,7 +86,7 @@ class YLImageView : UIImageView {
     }
     }
     
-    override func isAnimating() -> Bool {
+    override public func isAnimating() -> Bool {
         if (self.animatedImage != nil) {
             return !self.displayLink.isPaused
         } else {
@@ -94,7 +94,7 @@ class YLImageView : UIImageView {
         }
     }
     
-    override func startAnimating() {
+    override public func startAnimating() {
         if (self.animatedImage != nil) {
             self.displayLink.isPaused = false
         } else {
@@ -102,7 +102,7 @@ class YLImageView : UIImageView {
         }
     }
     
-    override func stopAnimating()  {
+    override public func stopAnimating()  {
         if (self.animatedImage != nil) {
             self.displayLink.isPaused = true
         } else {
@@ -110,7 +110,7 @@ class YLImageView : UIImageView {
         }
     }
     
-    override func display(_ layer: CALayer) {
+    override public func display(_ layer: CALayer) {
         if (self.animatedImage != nil) {
             if let frame = self.currentFrame {
                 layer.contents = frame.cgImage
