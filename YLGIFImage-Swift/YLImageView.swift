@@ -11,8 +11,8 @@ import QuartzCore
 
 class YLImageView : UIImageView {
     
-    private lazy var displayLink:CADisplayLink = CADisplayLink(target: self, selector: "changeKeyFrame:")
-    private var accumulator: NSTimeInterval = 0.0
+    private lazy var displayLink:CADisplayLink = CADisplayLink(target: self, selector: #selector(self.changeKeyFrame(_:)))
+    private var accumulator: TimeInterval = 0.0
     private var currentFrameIndex: Int = 0
     private var currentFrame: UIImage? = nil
     private var loopCountdown: Int = Int.max
@@ -20,26 +20,26 @@ class YLImageView : UIImageView {
   
     required init?(coder aDecoder: NSCoder)  {
         super.init(coder: aDecoder)
-        self.displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
-        self.displayLink.paused = true
+        self.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        self.displayLink.isPaused = true
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
-        self.displayLink.paused = true
+        self.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        self.displayLink.isPaused = true
     }
     
     override init(image: UIImage?)  {
         super.init(image: image)
-        self.displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
-        self.displayLink.paused = true
+        self.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        self.displayLink.isPaused = true
     }
     
     override init(image: UIImage?, highlightedImage: UIImage!)  {
         super.init(image: image, highlightedImage: highlightedImage)
-        self.displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
-        self.displayLink.paused = true
+        self.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        self.displayLink.isPaused = true
     }
     
     override var image: UIImage! {
@@ -73,22 +73,22 @@ class YLImageView : UIImageView {
         }
     }
     
-    override var highlighted: Bool {
+    override var isHighlighted: Bool {
     get{
-        return super.highlighted
+        return super.isHighlighted
     }
     set {
         if (self.animatedImage != nil) {
             return
         } else {
-            return super.highlighted = newValue
+            return super.isHighlighted = newValue
         }
     }
     }
     
     override func isAnimating() -> Bool {
         if (self.animatedImage != nil) {
-            return !self.displayLink.paused
+            return !self.displayLink.isPaused
         } else {
             return super.isAnimating()
         }
@@ -96,7 +96,7 @@ class YLImageView : UIImageView {
     
     override func startAnimating() {
         if (self.animatedImage != nil) {
-            self.displayLink.paused = false
+            self.displayLink.isPaused = false
         } else {
             super.startAnimating()
         }
@@ -104,23 +104,23 @@ class YLImageView : UIImageView {
     
     override func stopAnimating()  {
         if (self.animatedImage != nil) {
-            self.displayLink.paused = true
+            self.displayLink.isPaused = true
         } else {
             super.stopAnimating()
         }
     }
     
-    override func displayLayer(layer: CALayer) {
+    override func display(_ layer: CALayer) {
         if (self.animatedImage != nil) {
             if let frame = self.currentFrame {
-                layer.contents = frame.CGImage
+                layer.contents = frame.cgImage
             }
         } else {
             return
         }
     }
     
-    func changeKeyFrame(dpLink: CADisplayLink!) -> Void {
+    dynamic func changeKeyFrame(_ dpLink: CADisplayLink!) -> Void {
         if let animatedImg = self.animatedImage {
             if self.currentFrameIndex < animatedImg.frameImages.count {
                 self.accumulator += fmin(1.0, dpLink.duration)
@@ -128,7 +128,7 @@ class YLImageView : UIImageView {
                 while self.accumulator >= frameDura.doubleValue
                 {
                     self.accumulator = self.accumulator - frameDura.doubleValue//animatedImg.frameDurations[self.currentFrameIndex]
-                    self.currentFrameIndex++
+                    self.currentFrameIndex += 1
                     if Int(self.currentFrameIndex) >= animatedImg.frameImages.count {
                         self.currentFrameIndex = 0
                     }

@@ -17,6 +17,11 @@
 		4E8046E019447FF7007EFB50 /* YLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8046DE19447FF7007EFB50 /* YLImageView.swift */; };
 		4E8046E2194480E9007EFB50 /* iwatch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4E8046E1194480E9007EFB50 /* iwatch.gif */; };
 		4E8046E3194480E9007EFB50 /* iwatch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4E8046E1194480E9007EFB50 /* iwatch.gif */; };
+		64E7604A1D3BE31100E60752 /* YLGIFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 64E760481D3BE31100E60752 /* YLGIFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64E7604D1D3BE31100E60752 /* YLGIFImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E760461D3BE31100E60752 /* YLGIFImage.framework */; };
+		64E7604E1D3BE31100E60752 /* YLGIFImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64E760461D3BE31100E60752 /* YLGIFImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		64E760531D3BE31800E60752 /* YLGIFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8046DD19447FF7007EFB50 /* YLGIFImage.swift */; };
+		64E760541D3BE31A00E60752 /* YLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8046DE19447FF7007EFB50 /* YLImageView.swift */; };
 		DFAC28131AFB3A5A002A21F9 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFAC28121AFB3A5A002A21F9 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +33,28 @@
 			remoteGlobalIDString = 4E8046B919447FB6007EFB50;
 			remoteInfo = YLGIFImageSwiftDemo;
 		};
+		64E7604B1D3BE31100E60752 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E8046B219447FB6007EFB50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64E760451D3BE31100E60752;
+			remoteInfo = YLGIFImage;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		64E760521D3BE31100E60752 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				64E7604E1D3BE31100E60752 /* YLGIFImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4E5096741961B64000D37D33 /* joy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = joy.gif; sourceTree = "<group>"; };
@@ -44,6 +70,9 @@
 		4E8046DD19447FF7007EFB50 /* YLGIFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YLGIFImage.swift; path = "../YLGIFImage-Swift/YLGIFImage.swift"; sourceTree = "<group>"; };
 		4E8046DE19447FF7007EFB50 /* YLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YLImageView.swift; path = "../YLGIFImage-Swift/YLImageView.swift"; sourceTree = "<group>"; };
 		4E8046E1194480E9007EFB50 /* iwatch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iwatch.gif; sourceTree = "<group>"; };
+		64E760461D3BE31100E60752 /* YLGIFImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YLGIFImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64E760481D3BE31100E60752 /* YLGIFImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGIFImage.h; sourceTree = "<group>"; };
+		64E760491D3BE31100E60752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFAC28121AFB3A5A002A21F9 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,10 +81,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E7604D1D3BE31100E60752 /* YLGIFImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4E8046C919447FB6007EFB50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64E760421D3BE31100E60752 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,6 +108,7 @@
 				4E8046DC19447FCC007EFB50 /* Classes */,
 				4E8046BC19447FB6007EFB50 /* YLGIFImageSwiftDemo */,
 				4E8046CF19447FB6007EFB50 /* YLGIFImageSwiftDemoTests */,
+				64E760471D3BE31100E60752 /* YLGIFImage */,
 				4E8046BB19447FB6007EFB50 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +118,7 @@
 			children = (
 				4E8046BA19447FB6007EFB50 /* YLGIFImageSwiftDemo.app */,
 				4E8046CC19447FB6007EFB50 /* YLGIFImageSwiftDemoTests.xctest */,
+				64E760461D3BE31100E60752 /* YLGIFImage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,7 +172,27 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		64E760471D3BE31100E60752 /* YLGIFImage */ = {
+			isa = PBXGroup;
+			children = (
+				64E760481D3BE31100E60752 /* YLGIFImage.h */,
+				64E760491D3BE31100E60752 /* Info.plist */,
+			);
+			path = YLGIFImage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		64E760431D3BE31100E60752 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64E7604A1D3BE31100E60752 /* YLGIFImage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		4E8046B919447FB6007EFB50 /* YLGIFImageSwiftDemo */ = {
@@ -143,10 +202,12 @@
 				4E8046B619447FB6007EFB50 /* Sources */,
 				4E8046B719447FB6007EFB50 /* Frameworks */,
 				4E8046B819447FB6007EFB50 /* Resources */,
+				64E760521D3BE31100E60752 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				64E7604C1D3BE31100E60752 /* PBXTargetDependency */,
 			);
 			name = YLGIFImageSwiftDemo;
 			productName = YLGIFImageSwiftDemo;
@@ -171,6 +232,24 @@
 			productReference = 4E8046CC19447FB6007EFB50 /* YLGIFImageSwiftDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		64E760451D3BE31100E60752 /* YLGIFImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64E7604F1D3BE31100E60752 /* Build configuration list for PBXNativeTarget "YLGIFImage" */;
+			buildPhases = (
+				64E760411D3BE31100E60752 /* Sources */,
+				64E760421D3BE31100E60752 /* Frameworks */,
+				64E760431D3BE31100E60752 /* Headers */,
+				64E760441D3BE31100E60752 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YLGIFImage;
+			productName = YLGIFImage;
+			productReference = 64E760461D3BE31100E60752 /* YLGIFImage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -179,15 +258,21 @@
 			attributes = {
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Yong Li";
 				TargetAttributes = {
 					4E8046B919447FB6007EFB50 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0800;
 					};
 					4E8046CB19447FB6007EFB50 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0800;
 						TestTargetID = 4E8046B919447FB6007EFB50;
+					};
+					64E760451D3BE31100E60752 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -206,6 +291,7 @@
 			targets = (
 				4E8046B919447FB6007EFB50 /* YLGIFImageSwiftDemo */,
 				4E8046CB19447FB6007EFB50 /* YLGIFImageSwiftDemoTests */,
+				64E760451D3BE31100E60752 /* YLGIFImage */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +317,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		64E760441D3BE31100E60752 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -253,6 +346,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		64E760411D3BE31100E60752 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64E760531D3BE31800E60752 /* YLGIFImage.swift in Sources */,
+				64E760541D3BE31A00E60752 /* YLImageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,6 +362,11 @@
 			isa = PBXTargetDependency;
 			target = 4E8046B919447FB6007EFB50 /* YLGIFImageSwiftDemo */;
 			targetProxy = 4E8046CD19447FB6007EFB50 /* PBXContainerItemProxy */;
+		};
+		64E7604C1D3BE31100E60752 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64E760451D3BE31100E60752 /* YLGIFImage */;
+			targetProxy = 64E7604B1D3BE31100E60752 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -295,8 +402,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -340,6 +449,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -357,24 +467,31 @@
 		4E8046D719447FB6007EFB50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = YLGIFImageSwiftDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ronnie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		4E8046D819447FB6007EFB50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = YLGIFImageSwiftDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ronnie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -393,7 +510,9 @@
 				INFOPLIST_FILE = YLGIFImageSwiftDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ronnie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -409,8 +528,69 @@
 				INFOPLIST_FILE = YLGIFImageSwiftDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ronnie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		64E760501D3BE31100E60752 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = YLGIFImage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skype.YLGIFImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		64E760511D3BE31100E60752 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = YLGIFImage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skype.YLGIFImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -443,6 +623,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		64E7604F1D3BE31100E60752 /* Build configuration list for PBXNativeTarget "YLGIFImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64E760501D3BE31100E60752 /* Debug */,
+				64E760511D3BE31100E60752 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
