@@ -81,7 +81,7 @@ public class YLGIFImage : UIImage {
         YLGIFGlobalSetting.prefetchNumber = number
     }
 
-    convenience init?(named name: String!) {
+    public convenience init?(named name: String!) {
         guard let path = Bundle.main.pathForResource(name, ofType: nil)
             else { return nil }
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path))
@@ -89,12 +89,12 @@ public class YLGIFImage : UIImage {
         self.init(data: data)
     }
 
-    convenience override init?(contentsOfFile path: String) {
+    public convenience override init?(contentsOfFile path: String) {
         let data = try? Data(contentsOf: URL(string: path)!)
         self.init(data: data!)
     }
 
-    convenience override init?(data: Data)  {
+    public convenience override init?(data: Data)  {
         self.init(data: data, scale: 1.0)
     }
 
