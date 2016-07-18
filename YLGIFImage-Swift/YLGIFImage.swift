@@ -100,7 +100,7 @@ public class YLGIFImage : UIImage {
             super.init()
             createSelf(cgImgSource, scale: 1.0)
         } else {
-            super.init(data: data, scale: 1.0)
+            super.init(data: data)
         }
     }
 
