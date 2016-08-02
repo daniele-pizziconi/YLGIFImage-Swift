@@ -86,11 +86,11 @@ public class YLImageView : UIImageView {
     }
     }
     
-    override public func isAnimating() -> Bool {
+    override public var isAnimating: Bool {
         if (self.animatedImage != nil) {
             return !self.displayLink.isPaused
         } else {
-            return super.isAnimating()
+            return super.isAnimating
         }
     }
     

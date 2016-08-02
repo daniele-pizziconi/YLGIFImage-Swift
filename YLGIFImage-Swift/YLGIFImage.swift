@@ -60,7 +60,7 @@ public class YLGIFImage : UIImage {
         //Log("\(self.frameImages.count)")
     }
 
-    private lazy var readFrameQueue:DispatchQueue = DispatchQueue(label: "com.ronnie.gifreadframe", attributes: DispatchQueueAttributes.serial)
+    private lazy var readFrameQueue:DispatchQueue = DispatchQueue(label: "com.ronnie.gifreadframe")
 
     private var _scale:CGFloat = 1.0
     private var _cgImgSource:CGImageSource? = nil
@@ -82,7 +82,7 @@ public class YLGIFImage : UIImage {
     }
 
     public convenience init?(named name: String!) {
-        guard let path = Bundle.main.pathForResource(name, ofType: nil)
+        guard let path = Bundle.main.path(forResource: name, ofType: nil)
             else { return nil }
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: path))
             else { return nil }
