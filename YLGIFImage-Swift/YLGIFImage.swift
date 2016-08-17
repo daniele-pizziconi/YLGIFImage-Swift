@@ -95,7 +95,7 @@ public class YLGIFImage : UIImage {
     }
 
     public override init?(data: Data)  {
-        let cgImgSource = CGImageSourceCreateWithData(data, nil)
+        let cgImgSource = CGImageSourceCreateWithData(data as CFData, nil)
         if YLGIFImage.isCGImageSourceContainAnimatedGIF(cgImgSource) {
             super.init()
             createSelf(cgImgSource, scale: 1.0)
@@ -105,7 +105,7 @@ public class YLGIFImage : UIImage {
     }
 
     public override init?(data: Data, scale: CGFloat) {
-        let cgImgSource = CGImageSourceCreateWithData(data, nil)
+        let cgImgSource = CGImageSourceCreateWithData(data as CFData, nil)
         if YLGIFImage.isCGImageSourceContainAnimatedGIF(cgImgSource) {
             super.init()
             createSelf(cgImgSource, scale: scale)
