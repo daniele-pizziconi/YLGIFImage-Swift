@@ -12,7 +12,7 @@ import MobileCoreServices
 
 public class YLGIFImage : UIImage {
     
-    private class func isCGImageSourceContainAnimatedGIF(_ cgImageSource: CGImageSource!) -> Bool {
+    private class func isCGImageSourceContainAnimatedGIF(_ cgImageSource: CGImageSource) -> Bool {
         let isGIF = UTTypeConformsTo(CGImageSourceGetType(cgImageSource)!, kUTTypeGIF)
         let imgCount = CGImageSourceGetCount(cgImageSource)
         return isGIF && imgCount > 1
@@ -95,8 +95,7 @@ public class YLGIFImage : UIImage {
     }
 
     public override init?(data: Data)  {
-        let cgImgSource = CGImageSourceCreateWithData(data as CFData, nil)
-        if YLGIFImage.isCGImageSourceContainAnimatedGIF(cgImgSource) {
+        if let cgImgSource = CGImageSourceCreateWithData(data as CFData, nil), YLGIFImage.isCGImageSourceContainAnimatedGIF(cgImgSource) {
             super.init()
             createSelf(cgImgSource, scale: 1.0)
         } else {
@@ -105,8 +104,7 @@ public class YLGIFImage : UIImage {
     }
 
     public override init?(data: Data, scale: CGFloat) {
-        let cgImgSource = CGImageSourceCreateWithData(data as CFData, nil)
-        if YLGIFImage.isCGImageSourceContainAnimatedGIF(cgImgSource) {
+        if let cgImgSource = CGImageSourceCreateWithData(data as CFData, nil), YLGIFImage.isCGImageSourceContainAnimatedGIF(cgImgSource) {
             super.init()
             createSelf(cgImgSource, scale: scale)
         } else {
