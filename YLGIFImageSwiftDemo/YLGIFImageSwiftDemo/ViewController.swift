@@ -20,10 +20,10 @@ class ViewController: UIViewController {
         YLGIFImage.setPrefetchNum(5)
         
         // Do any additional setup after loading the view, typically from a nib.
-        let path = Bundle.main.urlForResource("iwatch", withExtension: "gif")?.absoluteString as String!
+        let path = Bundle.main.url(forResource: "iwatch", withExtension: "gif")?.absoluteString as String!
         imageView.image = YLGIFImage(contentsOfFile: path!)
         
-        if imageView.isAnimating() {
+        if imageView.isAnimating {
             self.button.setTitle("Pause", for: UIControlState())
         } else {
             self.button.setTitle("Play", for: UIControlState())
@@ -37,13 +37,13 @@ class ViewController: UIViewController {
 
     @IBAction func clicked(_ button:UIButton) {
         
-        if imageView.isAnimating() {
+        if imageView.isAnimating {
             imageView.stopAnimating()
         } else {
             imageView.startAnimating()
         }
         
-        if imageView.isAnimating() {
+        if imageView.isAnimating {
             self.button.setTitle("Pause", for: UIControlState())
         } else {
             self.button.setTitle("Play", for: UIControlState())

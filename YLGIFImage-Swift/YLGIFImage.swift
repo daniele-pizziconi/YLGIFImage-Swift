@@ -10,6 +10,18 @@ import UIKit
 import ImageIO
 import MobileCoreServices
 
+// MARK: - UIImage Extension
+public typealias _ImageLiteralType = UIImage
+public extension UIImage {
+    private convenience init!(failableImageLiteral name: String) {
+        self.init(named: name)
+    }
+    
+    public convenience init(imageLiteralResourceName name: String) {
+        self.init(failableImageLiteral: name)
+    }
+}
+
 public class YLGIFImage : UIImage {
     
     private class func isCGImageSourceContainAnimatedGIF(_ cgImageSource: CGImageSource) -> Bool {
@@ -111,15 +123,15 @@ public class YLGIFImage : UIImage {
             super.init(data: data, scale: scale)
         }
     }
-
-    required public init?(coder aDecoder: NSCoder) {
+    
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    required public init(imageLiteralResourceName name: String) {
-        fatalError("init(imageLiteral name:) has not been implemented")
+    required convenience init(imageLiteralResourceName name: String) {
+        fatalError("init(imageLiteralResourceName:) has not been implemented")
     }
-
+    
     func getFrame(_ index: UInt) -> UIImage? {
         if Int(index) >= self.frameImages.count {
             return nil
