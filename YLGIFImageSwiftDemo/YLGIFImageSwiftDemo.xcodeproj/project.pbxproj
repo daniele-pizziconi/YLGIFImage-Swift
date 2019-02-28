@@ -67,8 +67,8 @@
 		4E8046CC19447FB6007EFB50 /* YLGIFImageSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YLGIFImageSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8046D119447FB6007EFB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E8046D219447FB6007EFB50 /* YLGIFImageSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLGIFImageSwiftDemoTests.swift; sourceTree = "<group>"; };
-		4E8046DD19447FF7007EFB50 /* YLGIFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YLGIFImage.swift; path = "../YLGIFImage-Swift/YLGIFImage.swift"; sourceTree = "<group>"; };
-		4E8046DE19447FF7007EFB50 /* YLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YLImageView.swift; path = "../YLGIFImage-Swift/YLImageView.swift"; sourceTree = "<group>"; };
+		4E8046DD19447FF7007EFB50 /* YLGIFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YLGIFImage.swift; path = ../YLGIFImage/YLGIFImage.swift; sourceTree = "<group>"; };
+		4E8046DE19447FF7007EFB50 /* YLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YLImageView.swift; path = ../YLGIFImage/YLImageView.swift; sourceTree = "<group>"; };
 		4E8046E1194480E9007EFB50 /* iwatch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iwatch.gif; sourceTree = "<group>"; };
 		64E760461D3BE31100E60752 /* YLGIFImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YLGIFImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E760481D3BE31100E60752 /* YLGIFImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGIFImage.h; sourceTree = "<group>"; };
