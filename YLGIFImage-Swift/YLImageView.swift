@@ -20,25 +20,25 @@ public class YLImageView : UIImageView {
   
     required public init?(coder aDecoder: NSCoder)  {
         super.init(coder: aDecoder)
-        self.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        self.displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         self.displayLink.isPaused = true
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        self.displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         self.displayLink.isPaused = true
     }
     
     override init(image: UIImage?)  {
         super.init(image: image)
-        self.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        self.displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         self.displayLink.isPaused = true
     }
     
     override init(image: UIImage?, highlightedImage: UIImage!)  {
         super.init(image: image, highlightedImage: highlightedImage)
-        self.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        self.displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         self.displayLink.isPaused = true
     }
     
@@ -120,7 +120,7 @@ public class YLImageView : UIImageView {
         }
     }
     
-    dynamic func changeKeyFrame(_ dpLink: CADisplayLink!) -> Void {
+    @objc dynamic func changeKeyFrame(_ dpLink: CADisplayLink!) -> Void {
         if let animatedImg = self.animatedImage {
             if self.currentFrameIndex < animatedImg.frameImages.count {
                 self.accumulator += fmin(1.0, dpLink.duration)

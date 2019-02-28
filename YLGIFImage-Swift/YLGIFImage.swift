@@ -17,7 +17,7 @@ public extension UIImage {
         self.init(named: name)
     }
     
-    public convenience init(imageLiteralResourceName name: String) {
+    @objc public convenience init(imageLiteralResourceName name: String) {
         self.init(failableImageLiteral: name)
     }
 }
